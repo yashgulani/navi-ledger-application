@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import ledgerclient.factory.CommandFactory;
 
-public class LedgerApplication
+public class GeekTrust
 {
     public static void main(String[] args) throws Exception {
 

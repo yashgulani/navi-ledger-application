@@ -13,7 +13,7 @@ jar {
 //  version =  null               //Please do not change this final artifact version
 //  archiveBaseVersion = null     //Please do not change this final artifact version
   manifest {
-    attributes 'Main-Class' : 'ledgerclient.LedgerApplication' //This is main class of your program which will be executed
+    attributes 'Main-Class' : 'ledgerclient.GeekTrust' //This is main class of your program which will be executed
   }
 
   // To create a single jar with all dependencies.
