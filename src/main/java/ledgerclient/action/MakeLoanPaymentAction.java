@@ -21,7 +21,7 @@ public class MakeLoanPaymentAction implements Consumer<MakePaymentRequest> {
 
   private void validate(MakePaymentRequest request) {
 
-    if(request.getLumpSumAmount() <= 0 || request.getEmiNumber() <= 0) {
+    if(request.getLumpSumAmount() <= 0 || request.getEmiNumber() < 0) {
       throw new RuntimeException("Invalid Request");
     }
   }

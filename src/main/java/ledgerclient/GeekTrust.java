@@ -9,7 +9,7 @@ public class GeekTrust
 {
     public static void main(String[] args) throws Exception {
 
-      String filePath = System.getProperty("user.dir") + "/src/main/java/ledgerclient/sample_io/INPUT2.txt";
+      String filePath = args[0];
       Scanner myReader = new Scanner(new FileReader(filePath));
       while (myReader.hasNextLine()) {
         String data = myReader.nextLine();

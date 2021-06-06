@@ -12,6 +12,6 @@ gradle clean build
 ```
 Run java 
 ```
-java -jar <path_to_shadow_jar>
-Path of shadow jar : navi-ledger-application/build/libs/navi-ledger-application-1.0.jar
+java -jar <path_to_shadow_jar> <absolute path to input file>
+Path of shadow jar : navi-ledger-application/build/libs/geektrust.jar
 ```
