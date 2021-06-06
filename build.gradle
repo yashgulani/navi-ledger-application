@@ -9,8 +9,8 @@ targetCompatibility = 1.8
 
 
 jar {
-  archiveBaseName = 'navi-ledger-application' //Please do not change this final artifact name
-//  version =  null               //Please do not change this final artifact version
+  archiveBaseName = 'geektrust' //Please do not change this final artifact name
+  version =  null               //Please do not change this final artifact version
 //  archiveBaseVersion = null     //Please do not change this final artifact version
   manifest {
     attributes 'Main-Class' : 'ledgerclient.GeekTrust' //This is main class of your program which will be executed
