@@ -1,8 +1,10 @@
 package ledgerclient.action;
 
-import ledgerclient.AmountCalculator;
+import ledgerclient.LoanCalculator;
+import ledgerclient.model.Loan;
+import ledgerclient.model.Payment;
 
-public class SimpleInterestAmountCalculator implements AmountCalculator {
+public class SimpleInterestCalculatorUtil implements LoanCalculator {
 
   @Override
   public Integer calculateAmount(Integer principal, Integer years, Integer rateOfInterest) {
@@ -17,6 +19,14 @@ public class SimpleInterestAmountCalculator implements AmountCalculator {
     int months = years*12;
     int monthEmi = (int)Math.ceil(totalAmount/(double)months);
     return monthEmi;
+  }
+
+  @Override
+  public Integer getLumpSumAmountPaid(Loan loan, Integer emiNumber) {
+    return loan.getPayments().stream()
+        .filter(payment -> payment.getEmisPaid() <= emiNumber)
+        .mapToInt(Payment::getLumpSumAmount)
+        .sum();
   }
 
 }

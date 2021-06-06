@@ -1,7 +1,7 @@
 package ledgerclient.action;
 
 import java.util.function.Function;
-import ledgerclient.AmountCalculator;
+import ledgerclient.LoanCalculator;
 import ledgerclient.dto.BalanceResponse;
 import ledgerclient.dto.ComputeBalanceRequest;
 import ledgerclient.model.Bank;
@@ -19,7 +19,7 @@ public class ComputeBalanceAction implements Function<ComputeBalanceRequest,Bala
     Loan loan = customer.getBankLoanMap().get(bank);
     validate(computeBalanceRequest,loan);
 
-    AmountCalculator amountCalculator = new SimpleInterestAmountCalculator();
+    LoanCalculator amountCalculator = new SimpleInterestCalculatorUtil();
     Integer totalAmount = amountCalculator.calculateAmount(loan.getPrincipalAmount(),
         loan.getYears(), loan.getInterestRate());
     Integer monthlyEmi = amountCalculator.getMonthlyEmi(loan.getPrincipalAmount(),

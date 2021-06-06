@@ -1,8 +1,9 @@
 package ledgerclient.action;
 
-import ledgerclient.AmountCalculator;
+import ledgerclient.LoanCalculator;
+import ledgerclient.model.Loan;
 
-public class CompoundInterestAmountCalculator implements AmountCalculator {
+public class CompoundInterestCalculatorUtil implements LoanCalculator {
 
   @Override
   public Integer calculateAmount(Integer principal, Integer years, Integer rateOfInterest) {
@@ -11,6 +12,11 @@ public class CompoundInterestAmountCalculator implements AmountCalculator {
 
   @Override
   public Integer getMonthlyEmi(Integer principal, Integer years, Integer rateOfInterest) {
+    return null;
+  }
+
+  @Override
+  public Integer getLumpSumAmountPaid(Loan loan, Integer emiNumber) {
     return null;
   }
 }
