@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Loan {
 
-  private Integer loanId;
+  private String loanId;
   private Integer principalAmount;
   private Integer years;
   private Integer interestRate;
   private Bank bank;
   private List<Payment> payments = new ArrayList<>();
 
-  public void setLoanId(Integer loanId) {
+  public void setLoanId(String loanId) {
     this.loanId = loanId;
   }
 
@@ -32,7 +32,7 @@ public class Loan {
     this.bank = bank;
   }
 
-  public Integer getLoanId() {
+  public String getLoanId() {
     return loanId;
   }
 

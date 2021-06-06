@@ -17,11 +17,7 @@ public class ComputeBalanceAction implements Function<ComputeBalanceRequest,Bala
     Customer customer = computeBalanceRequest.getCustomer();
     Bank bank = computeBalanceRequest.getBank();
     Loan loan = customer.getBankLoanMap().get(bank);
-
-    if(computeBalanceRequest.getEmiNumber() > loan.getYears()*12) {
-      System.out.println("Invalid Emi number");
-      return new BalanceResponse();
-    }
+    validate(computeBalanceRequest,loan);
 
     AmountCalculator amountCalculator = new SimpleInterestAmountCalculator();
     Integer totalAmount = amountCalculator.calculateAmount(loan.getPrincipalAmount(),
@@ -40,5 +36,11 @@ public class ComputeBalanceAction implements Function<ComputeBalanceRequest,Bala
 
     return new BalanceResponse(bank.getBankName(), customer.getName(), amountPaid, numberOfEmisLeft);
 
+  }
+
+  private void validate(ComputeBalanceRequest computeBalanceRequest, Loan loan) {
+    if(computeBalanceRequest.getEmiNumber() > loan.getYears()*12) {
+      throw new RuntimeException("Invalid Emi number");
+    }
   }
 }

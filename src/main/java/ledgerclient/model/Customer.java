@@ -20,4 +20,8 @@ public class Customer {
   public String getName() {
     return name;
   }
+
+  public Customer(String name) {
+    this.name = name;
+  }
 }

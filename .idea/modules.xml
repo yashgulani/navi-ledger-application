@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NaviMc.iml" filepath="$PROJECT_DIR$/NaviMc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navi-ledger-application.iml" filepath="$PROJECT_DIR$/navi-ledger-application.iml" />
     </modules>
   </component>
 </project>
